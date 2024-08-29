@@ -1,6 +1,6 @@
 import 'package:movies_flutter_riverpod/data/remote/response/genres_response.dart';
 
-class MovieResponse {
+class MovieDetail {
   bool? _adult;
   String? _backdropPath;
   BelongsToCollection? _belongsToCollection;
@@ -28,7 +28,7 @@ class MovieResponse {
   double? _voteAverage;
   int? _voteCount;
 
-  MovieResponse(
+  MovieDetail(
       {bool? adult,
         String? backdropPath,
         BelongsToCollection? belongsToCollection,
@@ -194,7 +194,7 @@ class MovieResponse {
   int? get voteCount => _voteCount;
   set voteCount(int? voteCount) => _voteCount = voteCount;
 
-  MovieResponse.fromJson(Map<String, dynamic> json) {
+  MovieDetail.fromJson(Map<String, dynamic> json) {
     _adult = json['adult'];
     _backdropPath = json['backdrop_path'];
     _belongsToCollection = json['belongs_to_collection'] != null

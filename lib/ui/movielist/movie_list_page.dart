@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:movies_flutter_riverpod/ui/common/search/search_field.dart';
+import 'package:movies_flutter_riverpod/ui/moviedetail/movies_detail_page.dart';
 import 'package:movies_flutter_riverpod/ui/movielist/widget/movie_card.dart';
 import 'package:movies_flutter_riverpod/util/constant.dart';
 
@@ -28,9 +29,7 @@ class MovieListPage extends ConsumerWidget {
 
     if (movieListController.isInitialize) {
       movieListController.isInitialize = false;
-      Future.delayed(const Duration(seconds: 1), () {
-        movieListController.searchMovies(Constant.defaultQuery);
-      });
+      movieListController.searchMovies(Constant.defaultQuery);
     }
 
     return Scaffold(
@@ -53,8 +52,18 @@ class MovieListPage extends ConsumerWidget {
                         controller: scrollController,
                         itemBuilder: (context, index) {
                           final movieItem = movies[index];
-                          return MovieCard(
-                            movieItem: movieItem,
+                          return InkWell(
+                            onTap: () => {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        MovieDetailPage(movieId: movieItem.id)),
+                              )
+                            },
+                            child: MovieCard(
+                              movieItem: movieItem,
+                            ),
                           );
                         },
                       ),

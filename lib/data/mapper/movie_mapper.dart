@@ -1,5 +1,7 @@
 import 'package:movies_flutter_riverpod/data/remote/response/genres_response.dart';
+import 'package:movies_flutter_riverpod/data/remote/response/movie_response.dart';
 import 'package:movies_flutter_riverpod/data/remote/response/movies_response.dart';
+import 'package:movies_flutter_riverpod/ui/moviedetail/model/movie_detail.dart';
 import 'package:movies_flutter_riverpod/ui/movielist/model/movie_item.dart';
 
 class MovieMapper {
@@ -7,18 +9,22 @@ class MovieMapper {
       MoviesResponse moviesResponse, List<Genres> genres) {
     List<MovieItem> list = [];
     moviesResponse.results?.forEach((element) {
-      var movieItem = toMovie(element);
-      movieItem.genres = getGenresIds(genres, element.genreIds);
+      var movieItem = toMovieItem(element);
+      movieItem.genres = getGenresByIds(genres, element.genreIds);
       list.add(movieItem);
     });
     return list;
   }
 
-  MovieItem toMovie(Results results) {
+  MovieItem toMovieItem(Results results) {
     return MovieItem.fromJson(results.toJson());
   }
 
-  String getGenresIds(List<Genres> genres, List<int>? genreIds) {
+  MovieDetail toMovieDetail(MovieResponse movieResponse) {
+    return MovieDetail.fromJson(movieResponse.toJson());
+  }
+
+  String getGenresByIds(List<Genres> genres, List<int>? genreIds) {
     if (genreIds == null || genreIds.isEmpty) {
       return ""; // Handle empty or null genreIds gracefully
     }

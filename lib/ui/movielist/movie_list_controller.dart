@@ -57,6 +57,6 @@ class MovieListController extends StateNotifier<List<MovieItem>> {
 
 // Define a provider for MovieListController
 final movieListProvider =
-    StateNotifierProvider<MovieListController, List<MovieItem>>((ref) {
+    StateNotifierProvider.autoDispose<MovieListController, List<MovieItem>>((ref) {
   return MovieListController();
 });

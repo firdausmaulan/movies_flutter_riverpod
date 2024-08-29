@@ -6,7 +6,7 @@ class SearchDebounce {
 
   Timer? _timer;
 
-  SearchDebounce({this.milliseconds = 500});
+  SearchDebounce({this.milliseconds = 1000});
 
   run(VoidCallback action) {
     if (null != _timer) {

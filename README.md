@@ -7,7 +7,9 @@ What I learn in this project :
 - Show network log with cuchker
 - ListView load more
 - Show image from url
-- riverpod stuff : ProviderScope, ConsumerWidgets, StateNotifier, WidgetRef watch and read
+- open new page using MaterialPageRoute
+- send data between page
+- riverpod stuff : ProviderScope, ConsumerWidgets, StateNotifier, WidgetRef watch and read, autodispose
 
 Source :
 - https://www.youtube.com/watch?v=7Cp1GlmHTGE
