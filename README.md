@@ -11,9 +11,9 @@ What I learn in this project :
 - send data between page
 - riverpod stuff : ProviderScope, ConsumerWidgets, StateNotifier, WidgetRef watch and read, autodispose
 
-![](https://raw.githubusercontent.com/firdausmaulan/movies_flutter_riverpod/main/screenshot/movie-list.jpeg)
+<img src="https://raw.githubusercontent.com/firdausmaulan/movies_flutter_riverpod/main/screenshot/movie-list.jpeg" width="300">
 
-![](https://raw.githubusercontent.com/firdausmaulan/movies_flutter_riverpod/main/screenshot/movie-detail.jpeg)
+<img src="https://raw.githubusercontent.com/firdausmaulan/movies_flutter_riverpod/main/screenshot/movie-detail.jpeg" width="300">
 
 Source :
 - https://www.youtube.com/watch?v=7Cp1GlmHTGE
